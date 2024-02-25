@@ -29,17 +29,22 @@
         <el-menu-item index="1-4-1">item one</el-menu-item>
       </el-sub-menu>
     </el-sub-menu>-->
-    <el-menu-item index="2">
+    
+    <el-menu-item index="1">
       <el-icon><icon-menu /></el-icon>
       <template #title>题库</template>
     </el-menu-item>
-    <el-menu-item index="3" disabled>
-      <el-icon><document /></el-icon>
+    <el-menu-item index="2" disabled>
+      <el-icon><Document /></el-icon>
       <template #title>考试题</template>
     </el-menu-item>
-    <el-menu-item index="4">
-      <el-icon><setting /></el-icon>
+    <el-menu-item index="3">
+      <el-icon><ChatLineRound /></el-icon>
       <template #title>ai对话</template>
+    </el-menu-item>
+    <el-menu-item index="4">
+      <el-icon><Setting /></el-icon>
+      <template #title>设置</template>
     </el-menu-item>
   </el-menu>
 </template>
@@ -47,9 +52,10 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import {
-  //Document,
+  //图标注册在此
+  Document,
   Menu as IconMenu,
-  //Location,
+  ChatLineRound,
   Setting,
 } from '@element-plus/icons-vue'
 
