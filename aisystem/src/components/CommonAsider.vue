@@ -10,7 +10,8 @@
     @open="handleOpen"
     @close="handleClose"
   >
-    <el-sub-menu index="1">
+    <!--有二级菜单的导航-->
+    <!--<el-sub-menu index="1">
       <template #title>
         <el-icon><location /></el-icon>
         <span>Navigator One</span>
@@ -27,18 +28,18 @@
         <template #title><span>item four</span></template>
         <el-menu-item index="1-4-1">item one</el-menu-item>
       </el-sub-menu>
-    </el-sub-menu>
+    </el-sub-menu>-->
     <el-menu-item index="2">
       <el-icon><icon-menu /></el-icon>
-      <template #title>Navigator Two</template>
+      <template #title>题库</template>
     </el-menu-item>
     <el-menu-item index="3" disabled>
       <el-icon><document /></el-icon>
-      <template #title>Navigator Three</template>
+      <template #title>考试题</template>
     </el-menu-item>
     <el-menu-item index="4">
       <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
+      <template #title>ai对话</template>
     </el-menu-item>
   </el-menu>
 </template>
