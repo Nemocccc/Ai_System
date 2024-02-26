@@ -1,5 +1,7 @@
 # aisystem
 
+## 要运行以下服务请先在终端执行指令：cd aisystem 
+
 ## Project setup
 ```
 pnpm install

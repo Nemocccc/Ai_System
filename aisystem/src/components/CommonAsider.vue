@@ -30,11 +30,15 @@
       </el-sub-menu>
     </el-sub-menu>-->
     
-    <el-menu-item index="1">
-      <el-icon><icon-menu /></el-icon>
-      <template #title>题库</template>
+    <el-menu-item v-for="item in menuData" :key="item.name" :index="item.name">
+      <el-icon>
+        <keep-alive>
+          <component :is="item.icon"></component>
+        </keep-alive>
+      </el-icon>
+      <template #title>{{ item.label }}</template>
     </el-menu-item>
-    <el-menu-item index="2" disabled>
+    <!--<el-menu-item index="2" disabled>
       <el-icon><Document /></el-icon>
       <template #title>考试题</template>
     </el-menu-item>
@@ -45,27 +49,69 @@
     <el-menu-item index="4">
       <el-icon><Setting /></el-icon>
       <template #title>设置</template>
-    </el-menu-item>
+    </el-menu-item>-->
   </el-menu>
 </template>
 
 <script lang="ts" setup>
 import { ref } from 'vue'
+/*eslint no-unused-vars: "error"*/
 import {
   //图标注册在此
   Document,
-  Menu as IconMenu,
+  Menu,
   ChatLineRound,
   Setting,
 } from '@element-plus/icons-vue'
+// import { Vue } from 'vue-class-component';
 
 const isCollapse = ref(true)
+const menuData = [
+  {
+    path: '/bank',
+    name: 'question-bank',
+    label: '题库',
+    icon: 'Menu',
+    url: 'Bank/Bank',
+  },
+  {
+    path: '/exam',
+    name: 'exam-question',
+    label: '考试题',
+    icon: 'Document',
+    url: 'Exam/Exam',
+  },
+  {
+    path: '/chat',
+    name: 'AiChat',
+    label: 'AI对话',
+    icon: 'ChatLineRound',
+    url: 'Chat/Chat',
+  },
+  {
+    path: '/settings',
+    name: 'settings',
+    label: '设置',
+    icon: 'Setting',
+    url: 'Setting/Setting',
+  }
+]
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
 const handleClose = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
+
+// 在需要有子导航菜单（子路由）时启用下段代码
+// 筛选出没有子路由的元素
+// const nochildren = computed(() => {
+//   return menuData.filter(item => !item.children);
+// });
+// 筛选出有子路由的元素
+// const haschildren = computed(() => {
+//   return menuData.filter(item => item.children);
+// });
 </script>
 
 <style>
@@ -74,4 +120,3 @@ const handleClose = (key: string, keyPath: string[]) => {
   min-height: 400px;
 }
 </style>
-  

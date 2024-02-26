@@ -17,7 +17,7 @@ module.exports = defineConfig({
         }
       ]
     }
-  }
+  },
 
-  // lintOnSave: false // -> 用于关闭eslint校验。
+  lintOnSave: false // -> 用于关闭eslint校验。
 })
