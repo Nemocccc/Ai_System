@@ -1,11 +1,11 @@
 <template>
     <div class="common-layout">
         <el-container>
-        <el-header>顶层</el-header>
+        <el-aside width="200px">
+            <common-asider></common-asider>
+        </el-aside>
         <el-container>
-            <el-aside width="200px">
-                <common-asider></common-asider>
-            </el-aside>
+            <el-header>顶层</el-header>
             <el-container>
             <el-main>
                 <!--[这里是主窗口]-->
@@ -32,3 +32,13 @@ export default{
     }
 }
 </script>
+
+<style lang="less" scoped>
+.el-header {
+    height: 60px;
+    margin-left: 200px;
+}
+.el-aside {
+    margin-top: 0;
+}
+</style>

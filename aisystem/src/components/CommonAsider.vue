@@ -1,16 +1,22 @@
 <template>
-  <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
+  <!--下段代码用于让用户决定是否展开导航-->
+  <!--<el-radio-group 
+    v-model="isCollapse" 
+  >
     <el-radio-button :label="false">展开</el-radio-button>
     <el-radio-button :label="true">折叠</el-radio-button>
-  </el-radio-group>
+  </el-radio-group>-->
   <el-menu
     default-active="2"
     class="el-menu-vertical-demo"
     :collapse="isCollapse"
     @open="handleOpen"
     @close="handleClose"
+    background-color="#424949"
+    text-color="#A6ACAF"
+    active-text-color="#F4D03F"
   >
-    
+    <h3>AI问答系统</h3>
     <el-menu-item v-for="item in nochildren" :key="item.name" :index="item.name">
       <el-icon>
         <keep-alive>
@@ -56,7 +62,7 @@ import {
 } from '@element-plus/icons-vue'
 // import { Vue } from 'vue-class-component';
 
-const isCollapse = ref(true)
+const isCollapse = ref(false)
 const menuData = [
   {
     path: '/bank',
@@ -121,9 +127,23 @@ const haschildren = computed(() => {
 });
 </script>
 
-<style>
+<style lang="less" scoped>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
   min-height: 400px;
+}
+.el-menu {
+  height: 100vh;
+  h3 {
+    color: #A6ACAF;
+    text-align: center;
+    line-height: 48px;
+    font-weight: 500;
+    font-size: 14px;
+  }
+}
+.el-radio-group {
+  margin-bottom: 0;
+  margin-left: 0;
 }
 </style>

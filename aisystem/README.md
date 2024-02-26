@@ -5,6 +5,8 @@
 ## Project setup
 ```
 pnpm install
+
+pnpm add -g pnpm // 更新pnpm
 ```
 
 ### Compiles and hot-reloads for development
@@ -43,4 +45,9 @@ pnpm add vue-router@4
 ### 安装 typescript 依赖
 ```
 vue add typescript  全程点Y
+```
+
+### 安装less依赖
+```
+pnpm install less less-loader --save
 ```
