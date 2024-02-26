@@ -10,27 +10,8 @@
     @open="handleOpen"
     @close="handleClose"
   >
-    <!--有二级菜单的导航-->
-    <!--<el-sub-menu index="1">
-      <template #title>
-        <el-icon><location /></el-icon>
-        <span>Navigator One</span>
-      </template>
-      <el-menu-item-group>
-        <template #title><span>Group One</span></template>
-        <el-menu-item index="1-1">item one</el-menu-item>
-        <el-menu-item index="1-2">item two</el-menu-item>
-      </el-menu-item-group>
-      <el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-menu-item-group>
-      <el-sub-menu index="1-4">
-        <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-sub-menu>
-    </el-sub-menu>-->
     
-    <el-menu-item v-for="item in menuData" :key="item.name" :index="item.name">
+    <el-menu-item v-for="item in nochildren" :key="item.name" :index="item.name">
       <el-icon>
         <keep-alive>
           <component :is="item.icon"></component>
@@ -38,23 +19,33 @@
       </el-icon>
       <template #title>{{ item.label }}</template>
     </el-menu-item>
-    <!--<el-menu-item index="2" disabled>
-      <el-icon><Document /></el-icon>
-      <template #title>考试题</template>
-    </el-menu-item>
-    <el-menu-item index="3">
-      <el-icon><ChatLineRound /></el-icon>
-      <template #title>ai对话</template>
-    </el-menu-item>
-    <el-menu-item index="4">
-      <el-icon><Setting /></el-icon>
-      <template #title>设置</template>
-    </el-menu-item>-->
+
+    <!--有二级菜单的导航-->
+    <el-sub-menu v-for="item in haschildren" :key="item.name" :index="item.name">
+      <template #title>
+        <el-icon>
+          <keep-alive>
+          <component :is="item.icon"></component>
+        </keep-alive>
+        </el-icon>
+        <span>{{ item.label }}</span>
+      </template>
+      <el-menu-item-group v-for="subItem in item.children" :key="subItem.name">
+        <el-menu-item :index="subItem.name">{{ subItem.label }}</el-menu-item>
+      </el-menu-item-group>
+      <!--<el-menu-item-group title="Group Two">
+        <el-menu-item index="1-3">item three</el-menu-item>
+      </el-menu-item-group>
+      <el-sub-menu index="1-4">
+        <template #title><span>item four</span></template>
+        <el-menu-item index="1-4-1">item one</el-menu-item>
+      </el-sub-menu>-->
+    </el-sub-menu>
   </el-menu>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 /*eslint no-unused-vars: "error"*/
 import {
   //图标注册在此
@@ -94,6 +85,22 @@ const menuData = [
     label: '设置',
     icon: 'Setting',
     url: 'Setting/Setting',
+    children: [
+      {
+        path: '/option1',
+        name: 'option1',
+        label: '设置1',
+        // icon: 'Setting',
+        url: 'Setting/OptionOne'
+      },
+      {
+        path: '/option2',
+        name: 'option2',
+        label: '设置2',
+        // icon: 'Setting',
+        url: 'Setting/OptionTwo'
+      }
+    ]
   }
 ]
 const handleOpen = (key: string, keyPath: string[]) => {
@@ -105,13 +112,13 @@ const handleClose = (key: string, keyPath: string[]) => {
 
 // 在需要有子导航菜单（子路由）时启用下段代码
 // 筛选出没有子路由的元素
-// const nochildren = computed(() => {
-//   return menuData.filter(item => !item.children);
-// });
+const nochildren = computed(() => {
+  return menuData.filter(item => !item.children);
+});
 // 筛选出有子路由的元素
-// const haschildren = computed(() => {
-//   return menuData.filter(item => item.children);
-// });
+const haschildren = computed(() => {
+  return menuData.filter(item => item.children);
+});
 </script>
 
 <style>
