@@ -12,8 +12,8 @@
     :collapse="isCollapse"
     @open="handleOpen"
     @close="handleClose"
-    background-color="#424949"
-    text-color="#A6ACAF"
+    text-color="black"
+    background-color="#f98b8b"
     active-text-color="#F4D03F"
   >
     <h3>AI问答系统</h3>
@@ -31,8 +31,8 @@
       <template #title>
         <el-icon>
           <keep-alive>
-          <component :is="item.icon"></component>
-        </keep-alive>
+            <component :is="item.icon"></component>
+          </keep-alive>
         </el-icon>
         <span>{{ item.label }}</span>
       </template>
@@ -135,12 +135,13 @@ const haschildren = computed(() => {
 .el-menu {
   height: 100vh;
   h3 {
-    color: #A6ACAF;
+    color: black;
     text-align: center;
     line-height: 48px;
     font-weight: 500;
     font-size: 14px;
   }
+  background-image: linear-gradient(rgba(238, 131, 173, 1), #f98b8b 30%, rgba(237, 202, 141, 1));
 }
 .el-radio-group {
   margin-bottom: 0;

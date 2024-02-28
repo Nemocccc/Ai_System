@@ -5,7 +5,9 @@
             <common-asider></common-asider>
         </el-aside>
         <el-container>
-            <el-header>顶层</el-header>
+            <el-header>
+                <!--<top-header></top-header>-->
+            </el-header>
             <el-container>
             <el-main>
                 <!--[这里是主窗口]-->
@@ -13,7 +15,9 @@
                 <!-- 路由匹配到的组件将渲染在这里 -->
                 <router-view></router-view>
             </el-main>
-            <el-footer>底部</el-footer>
+            <el-footer>
+                <!--<bottom-input></bottom-input>-->
+            </el-footer>
             </el-container>
         </el-container>
         </el-container>
@@ -22,6 +26,8 @@
 
 <script>
 import CommonAsider from '@/components/CommonAsider.vue';
+// import BottomInput from '@/components/BottomInput.vue';
+// import TopHeader from '@/components/TopHeader.vue';
 
 export default{
     data(){
@@ -29,6 +35,8 @@ export default{
     },
     components: {
         CommonAsider,
+        // BottomInput,
+        // TopHeader,
     }
 }
 </script>
@@ -36,9 +44,12 @@ export default{
 <style lang="less" scoped>
 .el-header {
     height: 60px;
-    margin-left: 200px;
+    background-image: linear-gradient(to right, rgba(238, 131, 173, 1), rgba(190, 36, 36, 0.7) 30%, rgba(237, 202, 141, 1));
 }
 .el-aside {
     margin-top: 0;
+}
+.el-footer {
+    margin-bottom: 20px;
 }
 </style>

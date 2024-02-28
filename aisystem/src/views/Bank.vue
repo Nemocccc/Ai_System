@@ -1,5 +1,5 @@
 <template>
-    <h1>IM User</h1>
+    <h1>imBank</h1>
 </template>
 
 <script>

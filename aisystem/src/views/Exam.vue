@@ -1,5 +1,5 @@
 <template>
-    <h1>imHome</h1>
+    <h1>ImExam</h1>
 </template>
 
 <script>

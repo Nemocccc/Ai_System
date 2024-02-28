@@ -1,9 +1,10 @@
 import { createRouter, createWebHashHistory } from "vue-router"
 
 // 1. 定义路由组件.
-import Home from "../views/SelfHome.vue"
-import User from "../views/SelfUser.vue"
+import Bank from "../views/Bank.vue"
+import Exam from "../views/Exam.vue"
 import Main from "../views/MainRouter.vue"
+import AiChat from "../views/AIChat.vue"
 
 // 2. 定义路由对组件进行映射
 const routes = [
@@ -13,8 +14,12 @@ const routes = [
         component: Main,
         children:[
             //子路由, 即嵌套路由
-            { path: 'Home', component: Home },
-            { path: 'User', component: User },
+            { path: 'Bank', component: Bank },//题库
+            { path: 'Exam', component: Exam },//考试题
+            { path: 'AiChat', component: AiChat },//Ai对话
+            { path: 'Setting', component: Settings },//设置
+            { path: 'OptionOne', component: OptionOne },//设置1
+            { path: 'OptionTwo', component: OptionTwo },//设置2
         ]
     },
 ]
