@@ -117,8 +117,11 @@ const handleClose = (key: string, keyPath: string[]) => {
 }
 // 点击菜单
 function ClickMenu(item: any) {
-  console.log(item)
-  router.push(item.path)
+  // console.log(item) // 打印当前的item
+  // console.log(router.currentRoute.value.path)//打印当前路由
+  if (router.currentRoute.value.path !== item.path && !(router.currentRoute.value.path === '/home' && (item.path === '/'))){
+    router.push(item.path)
+  }
 }
 
 // 在需要有子导航菜单（子路由）时启用下段代码
