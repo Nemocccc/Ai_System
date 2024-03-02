@@ -14,13 +14,14 @@ const routes = [
     {
         path: '/', 
         component: Main,
+        redirect: '/Bank', //将'/'路由重定向到'/Bank'
         children:[
             //子路由, 即嵌套路由
             { path: 'Bank', component: Bank },//题库
             { path: 'Exam', component: Exam },//考试题
             { path: 'Chat', component: AiChat },//Ai对话
-            { path: 'OptionOne', component: OptionOne },//设置1
-            { path: 'OptionTwo', component: OptionTwo },//设置2
+            { path: 'Option1', component: OptionOne },//设置1
+            { path: 'Option2', component: OptionTwo },//设置2
         ]
     },
 ]

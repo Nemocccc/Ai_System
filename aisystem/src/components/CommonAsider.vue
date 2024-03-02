@@ -37,7 +37,7 @@
         <span>{{ item.label }}</span>
       </template>
       <el-menu-item-group v-for="subItem in item.children" :key="subItem.name">
-        <el-menu-item :index="subItem.name">{{ subItem.label }}</el-menu-item>
+        <el-menu-item @click="ClickMenu(subItem)" :index="subItem.name">{{ subItem.label }}</el-menu-item>
       </el-menu-item-group>
       <!--<el-menu-item-group title="Group Two">
         <el-menu-item index="1-3">item three</el-menu-item>
