@@ -17,7 +17,7 @@
     active-text-color="#F4D03F"
   >
     <h3>AI问答系统</h3>
-    <el-menu-item v-for="item in nochildren" :key="item.name" :index="item.name">
+    <el-menu-item @click="ClickMenu(item)" v-for="item in nochildren" :key="item.name" :index="item.name">
       <el-icon>
         <keep-alive>
           <component :is="item.icon"></component>
@@ -60,6 +60,8 @@ import {
   ChatLineRound,
   Setting,
 } from '@element-plus/icons-vue'
+import { Vue } from 'vue-class-component';
+import router from '../router/index'
 // import { Vue } from 'vue-class-component';
 
 const isCollapse = ref(false)
@@ -86,11 +88,9 @@ const menuData = [
     url: 'Chat/Chat',
   },
   {
-    path: '/settings',
     name: 'settings',
     label: '设置',
     icon: 'Setting',
-    url: 'Setting/Setting',
     children: [
       {
         path: '/option1',
@@ -114,6 +114,11 @@ const handleOpen = (key: string, keyPath: string[]) => {
 }
 const handleClose = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
+}
+// 点击菜单
+function ClickMenu(item: any) {
+  console.log(item)
+  router.push(item.path)
 }
 
 // 在需要有子导航菜单（子路由）时启用下段代码
