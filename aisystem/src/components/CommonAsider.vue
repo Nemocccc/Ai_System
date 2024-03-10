@@ -16,7 +16,7 @@
     background-color="#f98b8b"
     active-text-color="#F4D03F"
   >
-    <h3>AI问答系统</h3>
+    <h3>{{ isCollapse ? '问答' : 'ai问答系统' }}</h3>
     <el-menu-item @click="ClickMenu(item)" v-for="item in nochildren" :key="item.name" :index="item.name">
       <el-icon>
         <keep-alive>
@@ -62,9 +62,9 @@ import {
 } from '@element-plus/icons-vue'
 import { Vue } from 'vue-class-component';
 import router from '../router/index'
+import { store } from '../store'
 // import { Vue } from 'vue-class-component';
 
-const isCollapse = ref(false)
 const menuData = [
   {
     path: '/bank',
@@ -133,6 +133,11 @@ const nochildren = computed(() => {
 const haschildren = computed(() => {
   return menuData.filter(item => item.children);
 });
+const isCollapse = computed(() => {
+  // console.log(store.state.isCollapse)
+  return store.state.isCollapse
+})
+
 </script>
 
 <style lang="less" scoped>
@@ -141,6 +146,7 @@ const haschildren = computed(() => {
   min-height: 400px;
 }
 .el-menu {
+  border-right: 0;
   height: 100vh;
   h3 {
     color: black;

@@ -1,4 +1,1 @@
-# 2.11 【A11】基于课程教学数据的实时内容推荐和个性化智能问答系统设计【超星集团】<br>
-### 项目描述：为服务外包创新创业大赛特创建的项目，题目如上<br>
-
-##### 未完待续。。。<br>
+### 项目仿照自[后台管理系统](https://www.bilibili.com/video/BV1QU4y1E7qo/?p=18&spm_id_from=pageDriver&vd_source=8a614553fd42ac4044499e810a8166aa)

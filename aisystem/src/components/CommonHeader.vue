@@ -1,7 +1,7 @@
 <template>
     <div class="header-container">
         <div class="left-content">
-            <el-button :icon="Menu" size="large" color="#DAF7A6"/>
+            <el-button @click="handleMenu" :icon="Menu" size="large" color="#DAF7A6"/>
             <!-- 面包屑 -->
             <span class="text">首页</span>
         </div>
@@ -30,6 +30,7 @@
 </template>
 
 <script lang="ts" setup>
+import { store } from '../store'
 import {
     Menu
 } from '@element-plus/icons-vue'
@@ -42,6 +43,10 @@ import { ArrowDown } from '@element-plus/icons-vue'
 //     //刷新当前页面
 //     window.location.reload();
 // }
+
+function handleMenu() {
+    store.commit('collapseMenu')
+}
 </script>
 
 <style lang="less", scoped>
