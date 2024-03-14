@@ -15,9 +15,6 @@
                 <!-- 路由匹配到的组件将渲染在这里 -->
                 <router-view></router-view>
             </el-main>
-            <el-footer>
-                <!--<bottom-input></bottom-input>-->
-            </el-footer>
             </el-container>
         </el-container>
         </el-container>
@@ -26,7 +23,6 @@
 
 <script>
 import CommonAsider from '@/components/CommonAsider.vue';
-// import BottomInput from '@/components/BottomInput.vue';
 import CommonHeader from '@/components/CommonHeader.vue';
 
 export default{
@@ -35,7 +31,6 @@ export default{
     },
     components: {
         CommonAsider,
-        // BottomInput,
         CommonHeader,
     }
 }
@@ -49,7 +44,9 @@ export default{
     padding: 0;
     margin-top: 0;
 }
-.el-footer {
-    margin-bottom: 20px;
+.el-main {
+    margin-top: 10px;
+    padding: 0;
+    height: 100vh - 11px;
 }
 </style>

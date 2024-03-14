@@ -18,6 +18,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 html, body, h3 {
   margin: 0;

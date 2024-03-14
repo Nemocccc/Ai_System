@@ -1,9 +1,10 @@
 import { createRouter, createWebHashHistory } from "vue-router"
 
 // 1. 定义路由组件.
+import Main from "../views/MainRouter.vue"
+
 import Bank from "../views/Bank.vue"
 import Exam from "../views/Exam.vue"
-import Main from "../views/MainRouter.vue"
 import AiChat from "../views/AIChat.vue"
 import OptionOne from "../views/OptionOne.vue"
 import OptionTwo from "../views/OptionTwo.vue"

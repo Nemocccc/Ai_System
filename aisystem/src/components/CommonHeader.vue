@@ -16,7 +16,7 @@
                 <template #dropdown>
                     <el-dropdown-menu>
                         <el-dropdown-item>
-                            跳转到超星网
+                            <a href="https://github.com/Nemocccc">跳转到我的github主页</a>
                         </el-dropdown-item>
                         <!-- <el-dropdown-item>Action 2</el-dropdown-item>
                         <el-dropdown-item>Action 3</el-dropdown-item>
@@ -51,9 +51,9 @@ function handleMenu() {
 
 <style lang="less", scoped>
 .header-container {
-    padding: 20px;
+    padding: 0px;
     background-image: linear-gradient(to right, rgba(238, 131, 173, 1), rgba(199, 0, 57, 0.6) 30%, #f98b8b 60%, rgba(237, 202, 141, 1));
-    height: 30px;
+    height: 70px;
     margin-right: 0;
     margin-left: 0;
     display: flex;
