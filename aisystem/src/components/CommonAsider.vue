@@ -27,7 +27,7 @@
     </el-menu-item>
 
     <!--有二级菜单的导航-->
-    <el-sub-menu v-for="item in haschildren" :key="item.name" :index="item.name">
+    <el-sub-menu v-for="item in haschildren" :key="item.name" :index="item.name" disabled="true">
       <template #title>
         <el-icon>
           <keep-alive>
@@ -39,13 +39,6 @@
       <el-menu-item-group v-for="subItem in item.children" :key="subItem.name">
         <el-menu-item @click="ClickMenu(subItem)" :index="subItem.name">{{ subItem.label }}</el-menu-item>
       </el-menu-item-group>
-      <!--<el-menu-item-group title="Group Two">
-        <el-menu-item index="1-3">item three</el-menu-item>
-      </el-menu-item-group>
-      <el-sub-menu index="1-4">
-        <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
-      </el-sub-menu>-->
     </el-sub-menu>
   </el-menu>
 </template>

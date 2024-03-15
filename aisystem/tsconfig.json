@@ -13,6 +13,12 @@
     "forceConsistentCasingInFileNames": true,
     "useDefineForClassFields": true,
     "sourceMap": true,
+    "checkJs": true,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "rootDir": "./",
+    "outDir": "./types",
+    // "noImplicitAny": false,
     "baseUrl": ".",
     "types": [
       "webpack-env"
@@ -32,11 +38,12 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
+    "src/**/*.d.ts",
     "src/**/*.vue",
     "tests/**/*.ts",
     "tests/**/*.tsx"
 , "src/main.ts", "src/router/index.ts", "src/store/index.ts"  ],
   "exclude": [
     "node_modules",
-  ]
+  ],
 }
