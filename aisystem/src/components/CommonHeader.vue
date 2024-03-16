@@ -3,12 +3,12 @@
         <div class="left-content">
             <el-button @click="handleMenu" :icon="Menu" size="large" color="#DAF7A6"/>
             <!-- 面包屑 -->
-            <span class="text">首页</span>
+            <span class="text"></span>
         </div>
         <div class="right-content">
             <el-dropdown>
                 <span class="el-dropdown-link">
-                    <img class="app-image" src="../assets/Images/学习通.png" alt="" />
+                    <img class="app-image" src="../assets/Images/nemo.jpg" alt="" />
                 <el-icon class="el-icon--right">
                     <arrow-down />
                 </el-icon>

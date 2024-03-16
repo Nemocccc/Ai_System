@@ -1,6 +1,7 @@
 # aisystem
 
 ## 要运行以下服务请先在终端执行指令：cd aisystem 
+### 如果pnpm run serve指令本地跑项目报错，您可以看看下面的依赖有没有安装呢。
 
 ## Project setup
 ```
